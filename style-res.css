@@ -1,0 +1,133 @@
+*{/* tüm siteyi kapsasın diye yıldız ile başladık.
+    Sonra, sıfıra sıfır olması için margin ve padding değerlerini sıfır girdik.*/
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{/* html etiketi içeriisnde font-size veriyoruz ki tüm ögeleri kapasayacak şekilde olsun*/
+    font-size: 7px; /* böyle tek seferde bunu belirledikten sonra aşağılarda rem ile katlarını verebiliriz.*/
+}
+
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    color:#fff;
+    font-size:1.6rem; /*1.6 rem i bir çarpan olarak düşün,yukarıda tanımladığımız 10 pxin 1.6 katı olacak.*/
+    line-height: 1.5; /* satır arası boşluklar*/
+    text-align: center;
+    background-color: #333;
+}
+a{ /*linkteki düzenlemeler için */
+    text-decoration: none;/* linkin altındaki çizgiyi yok eder.*/
+}
+p{
+    padding:1.6rem 0;/* sadece üst ve alt olsun istiyoruz sağ ve sol istemediğimiz için ikili gösterim yaptık
+    sağ ve sol değerlerini 0 yazdık.*/
+    /*16px olmasıı istiyoruz daha iyi olsun diye rem ile tanımladık.*/
+
+}
+img{
+    width:100%;
+    height: auto;/* resmi deforme etmemek için bot oranını otomatik olarak giriyoruz*/
+}
+.clearfix::after{
+    content:"";
+    display:block;
+    clear:both
+}
+
+
+header{
+    height:46rem;  
+}
+header .bg-image{
+    position:absolute;
+    background-image: url(bg-image);
+    background-size: cover;
+    background-position: center;
+    height:46rem;
+    width: 100%;
+    opacity:0.5;
+    z-index:-1;
+}
+header h1{
+    padding: 12rem;
+    padding-bottom:0;
+
+}
+.btn{ /* butonu yapıyoruz*/
+    display:inline;
+    background: #333;
+    color:#fff;
+    border: 1px solid #666;
+    margin:.5rem 0rem;
+    padding: 0.5rem 3.2rem;
+    text-align: center;
+    transition: all 0.4s; /* hover geçişin daha rahat olması için*/
+
+}.btn:hover{
+    background-color:#fff;
+    color:#333;
+}
+#section-a{
+    background-color: #eaeaea;
+    color:#333;/* bu yazı rengi oluyor.*/
+    padding:3.2rem 0;/* yazının div yani o kutu içerisinde üstten ve alttan boşluklarını bıraktık.*/
+}
+#section-b{
+    padding:2rem;
+}
+#section-b ul{
+    list-style:none;
+}
+#section-b  li{
+   background: #fff;
+   color:#333;
+   margin-bottom:1.5rem;
+}
+.col-content{
+    padding: 1.5rem;
+}
+#section-c{
+    background-color: #eaeaea;
+    color:#333;
+    padding:5rem;
+}
+#section-d{
+    padding:0;
+}
+#section-d .box:first-child{
+    background-color: darkslategray; 
+    
+}
+footer{
+    padding:4rem;
+    background: black;
+}
+footer a{
+    color:yellowgreen;
+}
+@media screen and (min-width:800px){ /*bu etiketler sayesinde responsive özellikler ekleniyor*/
+    html{
+        font-size:9px; /*800px tablet ekranı manasına geliyor*/
+    }
+
+}
+@media screen and (min-width:1200px){
+    html{
+        font-size:11px; /* 1200px ekran ve daha fazlasında geçerli olacak kodlar böyle olacak. */
+
+    }
+    #section-b li{
+        width:28%;
+        margin:1%;
+        display:inline-block; /* bilgisayar ekranına geçildiğinde yan yana gelmeleri için display yaptım*/
+    }
+    .box{
+        width:50%;
+        float:left;
+    }
+
+
+}
